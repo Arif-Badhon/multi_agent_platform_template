@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     """
     
     # API & App Settings
-    api_title: str = "Voice AI Agent API"
+    api_title: str = "{{cookiecutter.project_name}} API"
     api_version: str = "1.0.0"
     debug: bool = False
     
@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     
     # Qdrant Database
     qdrant_location: str = ":memory:" # Use ":memory:" for local testing or "http://qdrant:6333" for prod
-    qdrant_collection: str = "voice_ai_docs"
+    qdrant_collection: str = "{{cookiecutter.project_slug}}_docs"
     
     # LLM Settings
     ollama_base_url: str = "http://localhost:11434"
