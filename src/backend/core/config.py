@@ -33,5 +33,13 @@ class Settings(BaseSettings):
     
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
+    # Security
+    api_key_secret: str = Field(..., description="Required API key for WebSocket auth")
+    
+    # External Services
+    langfuse_public_key: str = Field(default="")
+    langfuse_secret_key: str = Field(default="")
+    cartesia_api_key: str = Field(default="", description="Required for Text-to-Speech")
+
 # Global settings instance
 settings = Settings()
